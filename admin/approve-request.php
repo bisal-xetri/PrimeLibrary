@@ -31,16 +31,8 @@ if (isset($_GET['id'])) {
 
         $fine = 0;
 
-        // Only calculate fine if current date is past the return date
-        if (time() > strtotime($return_date)) {
-            $days_overdue = (time() - strtotime($return_date)) / (60 * 60 * 24);
-
-            if ($days_overdue <= 5) {
-                $fine = 10 * $days_overdue;
-            } else {
-                $fine = (10 * 5) + (50 * ($days_overdue - 5));
-            }
-        }
+        
+       
 
         if ($result_delete_request) {
             // Insert the data into issuebook table

@@ -26,12 +26,16 @@ function updateFinesAndRemainingDays($con) {
 
             // Check if the current time is past the return date
             if ($nepal_time > strtotime($issuereturn)) {
+                // Calculate the number of days overdue
                 $days_overdue = ($nepal_time - strtotime($issuereturn)) / (60 * 60 * 24);
 
+                // Apply the new fine scheme
                 if ($days_overdue <= 5) {
-                    $fine = 10 * $days_overdue;
+                    // Within 5 days after return date
+                    $fine = 10; // Flat fine of ₹10
                 } else {
-                    $fine = (10 * 5) + (50 * ($days_overdue - 5));
+                    // After 5 days
+                    $fine = 10 + (2 * ($days_overdue - 5)); // Flat fine of ₹10 + ₹2 for each day overdue after 5 days
                 }
             }
 

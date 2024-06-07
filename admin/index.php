@@ -96,7 +96,25 @@
         </div>
         <div class="books">
         <?php
-            $sql6="SELECT * FROM issuebook ";
+            $sql7="SELECT * FROM issuebook ";
+            $res7=mysqli_query($con,$sql7);
+            $count7=mysqli_num_rows($res7);
+            if ($res7) {
+                $count7 = mysqli_num_rows($res7);
+            ?>
+                <h1><?php echo $count7; ?></h1>
+                <br>
+                <span>Issued Books</span>
+            <?php
+            } else {
+                // Handle the query error
+                echo "Error: " . mysqli_error($con);
+            }
+            ?>
+        </div>
+        <div class="books">
+        <?php
+            $sql6="SELECT * FROM returnbook ";
             $res6=mysqli_query($con,$sql6);
             $count6=mysqli_num_rows($res6);
             if ($res6) {
@@ -104,7 +122,7 @@
             ?>
                 <h1><?php echo $count6; ?></h1>
                 <br>
-                <span>Issued Books</span>
+                <span>Returned Books</span>
             <?php
             } else {
                 // Handle the query error

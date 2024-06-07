@@ -25,6 +25,7 @@ if (isset($_GET['id'])) {
     <div class="right">
         <table class="tbl-head">
             <tr>
+                <th>S.N.</th>
                 <th>Student Name</th>
                 <th>Book Name</th>
                 <th>Return Date</th>
@@ -36,6 +37,7 @@ if (isset($_GET['id'])) {
             $count = mysqli_num_rows($res);
 
             if ($count > 0) {
+                $sn=1;
                 while ($row = mysqli_fetch_assoc($res)) {
                     $id = $row['id'];
                     $name = $row['studentname'];
@@ -43,6 +45,7 @@ if (isset($_GET['id'])) {
                     $return_date = $row['returndate'];
                     ?>
                     <tr>
+                    <td><?php echo $sn++; ?></td>
                         <td><?php echo $name; ?></td>
                         <td><?php echo $bookname; ?></td>
                         <td><?php echo $return_date; ?></td>
@@ -55,7 +58,7 @@ if (isset($_GET['id'])) {
             } else {
                 ?>
                 <tr>
-                    <td colspan="4"><div class="error">No Books Returned Yet.</div></td>
+                    <td colspan="5"><div class="error">No Books Returned Yet.</div></td>
                 </tr>
                 <?php
             }

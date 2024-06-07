@@ -8,6 +8,7 @@
     <div class="right">
         <table class="tbl-head">
             <tr>
+                <th>S.N.</th>
                 <th>Title</th>
                 <th>Image</th>
                 <th>Category</th>
@@ -25,6 +26,7 @@
             $count = mysqli_num_rows($res);
 
             if ($count > 0) {
+                $sn=1;
                 // We have data in the database
                 while ($row = mysqli_fetch_assoc($res)) {
                     $id = $row['id'];
@@ -37,6 +39,7 @@
                     $copies = $row['copies'];
                     ?>
                     <tr>
+                        <td><?php echo $sn++;?></td>
                         <td><?php echo $title; ?></td>
                         <td>
                             <?php 
