@@ -129,7 +129,9 @@
     background-color: #016daf;
   }
   
-
+.footer-main{
+  margin-top: auto;
+}
   .social ul li {
     display: inline-block;
   
@@ -140,11 +142,10 @@
     margin-left: 50%;
   }
   .social img {
-    height: 20px;
+    height: 18px;
   }
-  .social{
-    margin-top: auto;
-  }
+ 
+  
   .footer p {
     margin-left: 43%;
     font-size: 15px;

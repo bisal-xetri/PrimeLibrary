@@ -21,13 +21,14 @@ if (isset($_GET['return_id'])) {
     }
 
     $book_details = mysqli_fetch_assoc($fetch_result);
+    $book_id = $book_details['book_id'];
     $bookname = $book_details['bookname'];
     $issuedate = $book_details['issuedate'];
     date_default_timezone_set('Asia/Kathmandu');
 
     $returndate = date('Y-m-d H:i:s');
 
-    $insert_query = "INSERT INTO returnbook (studentname, bookname, issuedate, returndate) VALUES ('$fullname', '$bookname', '$issuedate', '$returndate')";
+    $insert_query = "INSERT INTO returnbook (book_id,studentname, bookname, issuedate, returndate) VALUES ($book_id,'$fullname', '$bookname', '$issuedate', '$returndate')";
     $insert_result = mysqli_query($con, $insert_query);
 
     if (!$insert_result) {

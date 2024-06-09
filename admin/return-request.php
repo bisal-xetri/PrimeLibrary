@@ -5,11 +5,30 @@ include('partials/sidebar.php');
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
+    // Retrieve book information from returnbook table before deleting the entry
+    $return_book_query = "SELECT book_id FROM returnbook WHERE id = $id";
+    $return_book_result = mysqli_query($con, $return_book_query);
+
+    if (!$return_book_result) {
+        die("Query failed: " . mysqli_error($con));
+    }
+
+    $row = mysqli_fetch_assoc($return_book_result);
+    $book_id = $row['book_id'];
+
     // Query to remove the book from returnbook table
     $delete_query = "DELETE FROM returnbook WHERE id = $id";
     $delete_result = mysqli_query($con, $delete_query);
 
     if (!$delete_result) {
+        die("Query failed: " . mysqli_error($con));
+    }
+
+    // Update the copies value in the book table
+    $update_copies_query = "UPDATE book SET copies = copies + 1 WHERE id = $book_id";
+    $update_copies_result = mysqli_query($con, $update_copies_query);
+
+    if (!$update_copies_result) {
         die("Query failed: " . mysqli_error($con));
     }
 

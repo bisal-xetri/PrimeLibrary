@@ -8,15 +8,22 @@
 }
 
 body {
+  padding-top: 55px;
   height: 100vh;
   font-family: "Montserrat", sans-serif;
   background-color: #eee;
+  display: flex;
+  flex-direction: column;
 }
 .main{
   margin: 0 100px;
 }
 
 .nav {
+position: fixed;
+width: 84.3%;
+z-index: 10;
+top:0;
   background-color: #4c5760;
   padding: 10px 60px;
   display: flex;
@@ -43,7 +50,10 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
-
+.nav ul a:hover{
+  text-decoration: underline;
+  color: #0c93e7;
+}
 .slider {
   position: relative;
 
@@ -89,8 +99,8 @@ body {
 }
 .search button:hover {
   cursor: pointer;
-  background-color: white;
-  color: blue;
+  background-color: #0c93e7;
+
 }
 .bookview {
   display: grid;

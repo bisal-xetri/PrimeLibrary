@@ -20,43 +20,42 @@ if (isset($_GET['id'])) {
         $sql_delete_request = "DELETE FROM requestbook WHERE id = $request_id";
         $result_delete_request = mysqli_query($con, $sql_delete_request);
 
-        date_default_timezone_set('Asia/Kathmandu'); // Set timezone to Nepal Time
+        date_default_timezone_set('Asia/Kathmandu');
 
-        $issue_date = date("Y-m-d H:i:s"); // Current date and time in Nepal
+        $issue_date = date("Y-m-d H:i:s"); 
 
-        $return_date = date("Y-m-d H:i:s", strtotime("+30 days")); // Return date 30 days from now
+        $return_date = date("Y-m-d H:i:s", strtotime("+30 days")); 
 
-        // Calculate remaining days
         $remaining_days = (strtotime($return_date) - strtotime($issue_date)) / (60 * 60 * 24);
 
         $fine = 0;
 
-        
-       
-
         if ($result_delete_request) {
-            // Insert the data into issuebook table
-            $sql_insert_issue = "INSERT INTO issuebook (userid, book_id, username, bookname, issuedate, issuereturn, remaining_days, fine) 
-                                 VALUES ($userid, $book_id, '$username', '$bookname', '$issue_date', '$return_date', $remaining_days, $fine)";
-            $result_insert_issue = mysqli_query($con, $sql_insert_issue);
+            // Decrease copies value in the book table
+            $sql_update_book = "UPDATE book SET copies = copies - 1 WHERE id = $book_id";
+            $result_update_book = mysqli_query($con, $sql_update_book);
 
-            if ($result_insert_issue) {
-                // Issue approved successfully
-                header("Location:" . SITEURL . "admin/book-request.php");
+            if ($result_update_book) {
+                $sql_insert_issue = "INSERT INTO issuebook (userid, book_id, username, bookname, issuedate, issuereturn, remaining_days, fine) 
+                                     VALUES ($userid, $book_id, '$username', '$bookname', '$issue_date', '$return_date', $remaining_days, $fine)";
+                $result_insert_issue = mysqli_query($con, $sql_insert_issue);
+
+                if ($result_insert_issue) {
+                    header("Location:" . SITEURL . "admin/book-request.php");
+                    exit; // Add exit to prevent further execution
+                } else {
+                    echo "Error: " . mysqli_error($con);
+                }
             } else {
-                // Error inserting into issuebook table
-                echo "Error: " . mysqli_error($con);
+                echo "Error updating book copies: " . mysqli_error($con);
             }
         } else {
-            // Error deleting request data
-            echo "Error: " . mysqli_error($con);
+            echo "Error deleting request: " . mysqli_error($con);
         }
     } else {
-        // Request ID not found
         echo "Request ID not found.";
     }
 } else {
-    // Request ID not provided
     echo "Request ID not provided.";
 }
 ?>
