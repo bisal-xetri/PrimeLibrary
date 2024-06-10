@@ -82,8 +82,8 @@
                         <td><?php echo $featured; ?></td>
                         <td><?php echo $active; ?></td>
                         <td>
-                            <a class="btn-secondary" href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>">Edit</a>
-                            <a class="btn-danger" href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>">Del</a>
+                            <a class="btn-secondary" href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>">Update</a>
+                            <a class="btn-danger" href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>">Delete</a>
                         </td>
                     </tr>
                 <?php
@@ -101,3 +101,5 @@
         </table>
     </div>
 </div>
+</section>
+<?php include('partials/footer.php'); ?>

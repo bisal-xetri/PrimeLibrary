@@ -86,3 +86,4 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 </section>
+<?php include('partials/footer.php'); ?>

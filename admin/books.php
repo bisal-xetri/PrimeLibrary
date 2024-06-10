@@ -62,9 +62,9 @@
                         <td><?php echo $copies; ?></td>
                         <td>
                     
-                        <a class="btn-secondary" href="<?php echo SITEURL; ?>admin/update-book.php?id=<?php echo $id; ?>">Edit</a>
+                        <a class="btn-secondary book-update" href="<?php echo SITEURL; ?>admin/update-book.php?id=<?php echo $id; ?>">Edit Book</a>
                         
-                            <a class="btn-danger" href="<?php echo SITEURL; ?>admin/delete-book.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>">Del</a>
+                            <a class="btn-danger book-update" href="<?php echo SITEURL; ?>admin/delete-book.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>">Del Book</a>
                             </td>
                             
                     </tr>
@@ -83,3 +83,4 @@
     </div>
 </div>
 </section>
+<?php include('partials/footer.php'); ?>

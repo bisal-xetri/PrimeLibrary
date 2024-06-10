@@ -71,8 +71,8 @@
                             <td><?php echo $username; ?></td>
                             <td colspan="">
                                 <a class="btn-primary" href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id ?>"> Change Password</a>
-                                <a class="btn-secondary" href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id ?>"> Update Admin</a>
-                                <a class="btn-danger" href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id ?>"> Delete Admin</a>
+                                <a class="btn-secondary" href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id ?>"> edit Admin</a>
+                                <a class="btn-danger" href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id ?>"> Del Admin</a>
 
                             </td>
                         </tr>
@@ -90,3 +90,5 @@
         </table>
     </div>
 </div>
+</section>
+<?php include('partials/footer.php'); ?>

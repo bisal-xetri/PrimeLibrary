@@ -59,7 +59,7 @@
                 </tr>
                 <tr>
                     <td>Copies:</td>
-                    <td><input type="number" name="copies" placeholder=""></td>
+                    <td><input type="number" min="0" name="copies" placeholder=""></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -135,3 +135,5 @@
     </div>
 </div>
 </section>
+
+<?php include('partials/footer.php'); ?>

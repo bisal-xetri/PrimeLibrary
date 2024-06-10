@@ -21,6 +21,7 @@ body {
   display: flex;
   gap: 30px;
 }
+
 .left {
   width: 300px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -49,6 +50,7 @@ body {
 .right {
   display: flex;
   flex-wrap: wrap;
+
   gap: 20px;
 }
 .right .books {
@@ -62,16 +64,13 @@ body {
   border-radius: 5px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-   
 }
-.books h1{
-
-color: #1e0342;
+.books h1 {
+  color: #1e0342;
   font-size: 25px;
   font-weight: 700;
- 
 }
-.books span{
+.books span {
   font-size: 15px;
   font-weight: bold;
   color: #1e0342;
@@ -133,12 +132,14 @@ input[type="file"] {
   color: #eee;
 }
 .btn-secondary {
+  display: block;
   background-color: rgb(43, 180, 234);
   color: #fff;
   border: none;
   width: 150px;
+  text-align: center;
   margin-top: 15px;
-  padding: 8px 15px;
+  padding: 8px 0;
   border-radius: 5px;
 }
 .btn-secondary:hover {
@@ -146,24 +147,28 @@ input[type="file"] {
   cursor: pointer;
 }
 .btn-danger {
+  display: block;
   background-color: rgb(240, 63, 23);
   color: #fff;
   border: none;
   width: 150px;
+  text-align: center;
   margin-top: 15px;
-  padding: 8px 15px;
+  padding: 8px 0;
   border-radius: 5px;
 }
 .btn-danger:hover {
   background-color: red;
 }
 .btn-primary {
+  display: block;
   background-color: green;
   color: #fff;
   border: none;
   width: 150px;
+  text-align: center;
   margin-top: 15px;
-  padding: 8px 15px;
+  padding: 8px 0;
   border-radius: 5px;
 }
 .btn-primary:hover {

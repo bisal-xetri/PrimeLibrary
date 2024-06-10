@@ -34,6 +34,8 @@
          </form>
      </div>
  </div>
+ </section>
+<?php include('partials/footer.php'); ?>
  <?php
     //check submit button clicked
     if (isset($_POST['submit'])) {

@@ -92,7 +92,7 @@ if (isset($_GET['id'])) {
                 </tr>
                 <tr>
                     <td>Copies:</td>
-                    <td><input type="number" value="<?php echo $copies; ?>" name="copies" placeholder=""></td>
+                    <td><input min="0" type="number" value="<?php echo $copies; ?>" name="copies" placeholder=""></td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -177,3 +177,4 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 </section>
+<?php include('partials/footer.php'); ?>

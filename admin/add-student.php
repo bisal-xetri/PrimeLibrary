@@ -52,6 +52,9 @@ include('partials/sidebar.php');
     </form>
     </div>
 </div>
+</section>
+<?php include('partials/footer.php'); ?>
+
 
 <?php
 if (isset($_POST['submit'])) {

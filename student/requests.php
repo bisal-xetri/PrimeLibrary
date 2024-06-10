@@ -70,13 +70,15 @@ if (!$run) {
 
     <div class="user-detail-info">
         <h1>Issued Books</h1>
-
+        
+        
         <?php
         if (mysqli_num_rows($run) > 0) {
             if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
             }
         ?>
+         
             <table class="order-table">
                 <tr>
                     <th>Book Cover</th>
@@ -118,6 +120,7 @@ if (!$run) {
                         </td>
                         <td>
                             <a class="btn-return" href="?return_id=<?php echo $id; ?>">Return</a>
+                           
                         </td>
                     </tr>
                 <?php

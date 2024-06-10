@@ -48,3 +48,4 @@
     </div>
 </div>
 </section>
+<?php include('partials/footer.php'); ?>

@@ -50,6 +50,8 @@
 
     </div>
 </div>
+</section>
+<?php include('partials/footer.php'); ?>
 <?php
 //submit button clicked or not
 if (isset($_POST['submit'])) {

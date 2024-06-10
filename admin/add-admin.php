@@ -37,7 +37,8 @@
         </form>
     </div>
 </div>
-
+</section>
+<?php include('partials/footer.php'); ?>
 <?php
 // process the value from form and save it to database
 // Check whether button is clicked or not
