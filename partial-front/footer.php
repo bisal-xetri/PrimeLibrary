@@ -21,7 +21,7 @@
 </section>
 <section class="footer">
   <div class="container text-center">
-    <p>All rights reserved. Designed By <a href="#">Bishal Dhakal</a></p>
+    <p>All rights reserved. Designed By <a href="#">Bishal Dhakal, Sunil Bhandari, Sijan Pandey and Sashank Pandey</a></p>
   </div>
 </section>
 </section>

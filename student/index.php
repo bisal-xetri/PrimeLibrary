@@ -16,8 +16,8 @@ if (!isset($_SESSION['username'])) {
   <?php include('include/sidebar.php'); ?>
   <div class="user-detail-info">
     <h1>My Account</h1>
-    <div><a class="user-link" href="requests.php">Issued Books</a></div>
-    <p>Check the status and information regarding your online Requests</p>
+    <div><a class="user-link" href="requests.php">ISSUED BOOKS</a></div>
+    <p>Check the status and information regarding your Book Issued.</p>
 
     <div><a class="user-link" href="personal-detail.php">PERSONAL DETAILS</a></div>
     <p>You can access and modify your personal details.</p>

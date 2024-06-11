@@ -1,10 +1,10 @@
 <?php include('partials/sidebar.php'); ?>
 <div class="ok">
     <h1>Issued Books</h1>
-    <br/><br/>
+  
    
     <a  href="<?php echo SITEURL; ?>admin/update-fines.php" class="btn-secondary">Update Fine</a>
-    <br/><br/>
+    <br/>
   
     <div class="right">
         <table class="tbl-head">

@@ -6,30 +6,31 @@
     <div class="right">
 
         <div class="books">
+
             <?php
-            $sql="SELECT * FROM book";
-            $res=mysqli_query($con,$sql);
-            $count=mysqli_num_rows($res);
+            $sql = "SELECT SUM(copies) AS total_copies FROM book";
+            $res = mysqli_query($con, $sql);
+
             if ($res) {
-                $count = mysqli_num_rows($res);
+                $row = mysqli_fetch_assoc($res);
+                $totalCopies = $row['total_copies'];
             ?>
-                <h1><?php echo $count; ?></h1>
+                <h1><?php echo $totalCopies; ?></h1>
                 <br>
-                <span>Books</span>
+                <span>Total Books</span>
             <?php
             } else {
                 // Handle the query error
                 echo "Error: " . mysqli_error($con);
             }
             ?>
-           
-           
         </div>
+
         <div class="books">
-        <?php
-            $sql2="SELECT * FROM tbl_category ";
-            $res2=mysqli_query($con,$sql2);
-            $count2=mysqli_num_rows($res2);
+            <?php
+            $sql2 = "SELECT * FROM tbl_category ";
+            $res2 = mysqli_query($con, $sql2);
+            $count2 = mysqli_num_rows($res2);
             if ($res2) {
                 $count2 = mysqli_num_rows($res2);
             ?>
@@ -44,10 +45,10 @@
             ?>
         </div>
         <div class="books">
-        <?php
-            $sql3="SELECT * FROM requestbook ";
-            $res3=mysqli_query($con,$sql3);
-            $count3=mysqli_num_rows($res3);
+            <?php
+            $sql3 = "SELECT * FROM requestbook ";
+            $res3 = mysqli_query($con, $sql3);
+            $count3 = mysqli_num_rows($res3);
             if ($res3) {
                 $count3 = mysqli_num_rows($res3);
             ?>
@@ -62,10 +63,10 @@
             ?>
         </div>
         <div class="books">
-        <?php
-            $sql4="SELECT * FROM student ";
-            $res4=mysqli_query($con,$sql4);
-            $count4=mysqli_num_rows($res4);
+            <?php
+            $sql4 = "SELECT * FROM student ";
+            $res4 = mysqli_query($con, $sql4);
+            $count4 = mysqli_num_rows($res4);
             if ($res4) {
                 $count4 = mysqli_num_rows($res4);
             ?>
@@ -80,7 +81,7 @@
             ?>
         </div>
         <div class="books">
-        <?php
+            <?php
             $sql5 = "SELECT SUM(fine) as Total FROM issuebook ";
             $res5 = mysqli_query($con, $sql5);
             $row5 = mysqli_fetch_assoc($res5);
@@ -95,10 +96,10 @@
             <span> Total Fine</span>
         </div>
         <div class="books">
-        <?php
-            $sql7="SELECT * FROM issuebook ";
-            $res7=mysqli_query($con,$sql7);
-            $count7=mysqli_num_rows($res7);
+            <?php
+            $sql7 = "SELECT * FROM issuebook ";
+            $res7 = mysqli_query($con, $sql7);
+            $count7 = mysqli_num_rows($res7);
             if ($res7) {
                 $count7 = mysqli_num_rows($res7);
             ?>
@@ -113,10 +114,10 @@
             ?>
         </div>
         <div class="books">
-        <?php
-            $sql6="SELECT * FROM returnbook ";
-            $res6=mysqli_query($con,$sql6);
-            $count6=mysqli_num_rows($res6);
+            <?php
+            $sql6 = "SELECT * FROM returnbook ";
+            $res6 = mysqli_query($con, $sql6);
+            $count6 = mysqli_num_rows($res6);
             if ($res6) {
                 $count6 = mysqli_num_rows($res6);
             ?>
@@ -130,8 +131,8 @@
             }
             ?>
         </div>
-        </div>
     </div>
+</div>
 </div>
 </section>
 <?php include('partials/footer.php'); ?>
